@@ -1,0 +1,8 @@
+DNI: 45123456 | Nombre: Santiago Viluron | Curso: 5to Año | Promedio: 9.0
+DNI: 42987654 | Nombre: Lucía Martínez | Curso: 6to Año | Promedio: 8.5
+DNI: 45123456 | Nombre: Santiago Viluron | Curso: 5to Año | Promedio: 9.0
+DNI: 42987654 | Nombre: Lucía Martínez | Curso: 6to Año | Promedio: 8.5
+DNI: 45123456 | Nombre: Santiago Viluron | Curso: 5to Año | Promedio: 9.0
+DNI: 42987654 | Nombre: Lucía Martínez | Curso: 6to Año | Promedio: 8.5
+DNI: 45123456 | Nombre: Santiago Viluron | Curso: 5to Año | Promedio: 9.0
+DNI: 42987654 | Nombre: Lucía Martínez | Curso: 6to Año | Promedio: 8.5
