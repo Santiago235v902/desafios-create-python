@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Paso 1: Crear una lista vacía llamada sistema_alumnos
 sistema_alumnos = []
 
@@ -31,7 +30,7 @@ while True:
 print("\n--- Registro Finalizado ---")
 print(f"Total de alumnos matriculados: {len(sistema_alumnos)}")
 print("Listado completo de registros:")
-=======
+
 # Paso 1: Crear una lista vacía llamada sistema_alumnos
 sistema_alumnos = []
 
@@ -64,5 +63,4 @@ while True:
 print("\n--- Registro Finalizado ---")
 print(f"Total de alumnos matriculados: {len(sistema_alumnos)}")
 print("Listado completo de registros:")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
 print(sistema_alumnos)

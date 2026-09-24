@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 1. Crear un diccionario vacío
 alumno = {}
 
@@ -14,7 +14,7 @@ alumno["curso"] = curso
 
 # 4. Imprimir el diccionario resultante
 print("\nPerfil del alumno registrado:")
-=======
+
 # 1. Crear un diccionario vacío
 alumno = {}
 
@@ -30,5 +30,5 @@ alumno["curso"] = curso
 
 # 4. Imprimir el diccionario resultante
 print("\nPerfil del alumno registrado:")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
+
 print(alumno)
