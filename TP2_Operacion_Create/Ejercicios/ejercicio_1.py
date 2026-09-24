@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Creamos un diccionario vacío para guardar los datos del alumno
 alumno = {}
 
@@ -22,7 +22,7 @@ alumno["promedio"] = promedio
 
 # Mostramos el diccionario completo en pantalla
 print("Datos del alumno:")
-=======
+
 # Creamos un diccionario vacío para guardar los datos del alumno
 alumno = {}
 
@@ -46,5 +46,5 @@ alumno["promedio"] = promedio
 
 # Mostramos el diccionario completo en pantalla
 print("Datos del alumno:")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
+
 print(alumno)
