@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 {'nombre': 'Santiago', 'apellido': 'Viluron', 'dni': 5029482, 'edad': 16}
 {'nombre': 'Jorge', 'apellido': 'Pepito', 'dni': 5549841, 'edad': 20}
+=======
+{'nombre': 'Santiago', 'apellido': 'Viluron', 'dni': 5029482, 'edad': 16}
+{'nombre': 'Jorge', 'apellido': 'Pepito', 'dni': 5549841, 'edad': 20}
+>>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
