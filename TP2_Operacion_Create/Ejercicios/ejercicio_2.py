@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Creamos una lista vacía donde se guardarán todos los alumnos
 alumnos = []
 
@@ -31,7 +31,7 @@ for i in range(cantidad):
 
 # Mostramos todos los alumnos registrados
 print("\nLista completa de alumnos:")
-=======
+
 # Creamos una lista vacía donde se guardarán todos los alumnos
 alumnos = []
 
@@ -64,5 +64,5 @@ for i in range(cantidad):
 
 # Mostramos todos los alumnos registrados
 print("\nLista completa de alumnos:")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
+
 print(alumnos)
