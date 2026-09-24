@@ -1,0 +1,2 @@
+{'nombre': 'Santiago', 'apellido': 'Viluron', 'dni': 5029482, 'edad': 16}
+{'nombre': 'Jorge', 'apellido': 'Pepito', 'dni': 5549841, 'edad': 20}
