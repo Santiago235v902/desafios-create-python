@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Creamos una lista para almacenar los alumnos válidos
 alumnos = []
 
@@ -35,7 +35,7 @@ else:
 
 # Mostramos la lista final
 print("Alumnos registrados:")
-=======
+
 # Creamos una lista para almacenar los alumnos válidos
 alumnos = []
 
@@ -72,5 +72,5 @@ else:
 
 # Mostramos la lista final
 print("Alumnos registrados:")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
+
 print(alumnos)
