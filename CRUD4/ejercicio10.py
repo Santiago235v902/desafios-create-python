@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ==========================================
 # TRABAJO PRÁCTICO - OPERACIÓN CREATE
 # Registro de equipos de laboratorio
@@ -47,7 +47,7 @@ if len(equipos) > 0:
         print(f"Inventario: {equipo['inventario']} | Tipo: {equipo['tipo']} | Marca: {equipo['marca']} | Año: {equipo['anio']}")
 else:
     print("No se registraron equipos válidos.")
-=======
+
 # ==========================================
 # TRABAJO PRÁCTICO - OPERACIÓN CREATE
 # Registro de equipos de laboratorio
@@ -96,4 +96,3 @@ if len(equipos) > 0:
         print(f"Inventario: {equipo['inventario']} | Tipo: {equipo['tipo']} | Marca: {equipo['marca']} | Año: {equipo['anio']}")
 else:
     print("No se registraron equipos válidos.")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
