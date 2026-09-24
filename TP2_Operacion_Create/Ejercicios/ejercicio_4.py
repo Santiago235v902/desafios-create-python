@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Creamos una lista vacía para almacenar los alumnos
 alumnos = []
 
@@ -54,7 +54,7 @@ while True:
 
 # Mostramos todos los alumnos al finalizar
 print("\nLista final de alumnos:")
-=======
+
 # Creamos una lista vacía para almacenar los alumnos
 alumnos = []
 
@@ -110,5 +110,5 @@ while True:
 
 # Mostramos todos los alumnos al finalizar
 print("\nLista final de alumnos:")
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
+
 print(alumnos)
