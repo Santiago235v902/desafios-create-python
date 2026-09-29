@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 {
     "https://qr.link/PS9kgG/01/84847372725444": {
         "nombre": "1K PAPA",
         "precio": 2500.0,
         "stock": 5000000
     }
+=======
+{
+    "https://qr.link/PS9kgG/01/84847372725444": {
+        "nombre": "1K PAPA",
+        "precio": 2500.0,
+        "stock": 5000000
+    }
+>>>>>>> 1fd4cc4b8178adf5cbb154d069209b68fa1111d8
 }
