@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Equipos Informáticos</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gestión de Equipos Informáticos</h1>
+    </header>
+
+    <main class="container">
+        <!-- Formulario para agregar y editar equipos -->
+        <section class="form-section">
+            <h2 id="form-title">Registrar Nuevo Equipo</h2>
+            <form id="equipo-form">
+                <!-- Campo oculto para identificar si estamos editando -->
+                <input type="hidden" id="equipo-id">
+
+                <div class="form-group">
+                    <label for="tipo">Tipo de Computadora:</label>
+                    <select id="tipo" required>
+                        <option value="">Seleccione tipo...</option>
+                        <option value="Notebook">Notebook</option>
+                        <option value="PC de Escritorio">PC de Escritorio</option>
+                        <option value="All-in-One">All-in-One</option>
+                        <option value="Servidor">Servidor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="titular">Nombre del Titular:</label>
+                    <input type="text" id="titular" placeholder="Ej: Juan Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca del Equipo:</label>
+                    <input type="text" id="marca" placeholder="Ej: Lenovo, Dell, HP" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="procesador">Procesador:</label>
+                    <input type="text" id="procesador" placeholder="Ej: Intel Core i5, AMD Ryzen 7" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ram">Memoria RAM:</label>
+                    <input type="text" id="ram" placeholder="Ej: 16GB DDR4" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="almacenamiento">Almacenamiento:</label>
+                    <input type="text" id="almacenamiento" placeholder="Ej: 500GB SSD, 1TB HDD" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="placa-video">Placa de Video:</label>
+                    <input type="text" id="placa-video" placeholder="Ej: NVIDIA GTX 1660, Integrada Intel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pulgadas">Pulgadas de Pantalla:</label>
+                    <input type="text" id="pulgadas" placeholder="Ej: 15.6', 24'" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado del equipo:</label>
+                    <select id="estado" required>
+                        <option value="Operativo">Operativo</option>
+                        <option value="En reparación">En reparación</option>
+                        <option value="Descartado">Descartado</option>
+                    </select>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="btn-guardar" class="btn btn-primary">Guardar Equipo</button>
+                    <button type="button" id="btn-cancelar" class="btn btn-secondary hidden">Cancelar Edición</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección del panel de visualización y gestión -->
+        <section class="table-section">
+            <h2>Registro de Equipos</h2>
+
+            <div class="contadores" aria-live="polite">
+                <article class="contador"><span>Total registrados</span><strong id="contador-total">0</strong></article>
+                <article class="contador operativo"><span>Operativos</span><strong id="contador-operativo">0</strong></article>
+                <article class="contador reparacion"><span>En reparación</span><strong id="contador-reparacion">0</strong></article>
+                <article class="contador descartado"><span>Descartados</span><strong id="contador-descartado">0</strong></article>
+            </div>
+
+            <!-- Buscador/Filtro -->
+            <div class="search-box">
+                <label for="input-buscar">Buscar por titular o marca</label>
+                <input type="search" id="input-buscar" placeholder="Ej: Juan Pérez o Lenovo...">
+                <label for="filtro-estado">Filtrar por estado</label>
+                <select id="filtro-estado">
+                    <option value="">Todos los estados</option>
+                    <option value="Operativo">Operativo</option>
+                    <option value="En reparación">En reparación</option>
+                    <option value="Descartado">Descartado</option>
+                </select>
+            </div>
+
+            <div class="data-actions">
+                <button type="button" id="btn-exportar" class="btn btn-primary">Exportar JSON</button>
+                <label for="archivo-json" class="btn btn-secondary file-label">Importar JSON</label>
+                <input type="file" id="archivo-json" accept=".json,application/json" class="visually-hidden">
+            </div>
+
+            <!-- Tabla de datos -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Titular</th>
+                            <th>Marca</th>
+                            <th>Procesador</th>
+                            <th>RAM</th>
+                            <th>Disco</th>
+                            <th>Gráficos</th>
+                            <th>Pantalla</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-equipos-body">
+                        <!-- Los datos se cargan dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
