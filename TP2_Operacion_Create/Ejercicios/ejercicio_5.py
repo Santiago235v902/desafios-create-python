@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Creamos una función encargada de registrar un nuevo alumno
 def registrar_nuevo_alumno():
 
@@ -40,7 +40,7 @@ def registrar_nuevo_alumno():
 
 
 # Llamamos a la función para ejecutar el registro
-=======
+
 # Creamos una función encargada de registrar un nuevo alumno
 def registrar_nuevo_alumno():
 
@@ -82,5 +82,5 @@ def registrar_nuevo_alumno():
 
 
 # Llamamos a la función para ejecutar el registro
->>>>>>> 77ab13a377bbad5c616cd57d66bf8bde3bb556b5
+
 registrar_nuevo_alumno()
