@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Equipos Informáticos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Gestión de Equipos Informáticos</h1>
+        <p>Administración y control de equipos</p>
+    </header>
+<button id="btn-tema" class="btn-tema" type="button">
+    🌙 Modo noche
+</button>
+    <main class="container">
+
+        <section class="form-section" id="seccion-formulario">
+
+            <h2 id="form-title">Registrar equipo</h2>
+
+            <form id="formEquipo">
+
+                <input type="hidden" id="equipo-id">
+
+                <label for="titular">Titular</label>
+                <input type="text" id="titular" maxlength="100"
+                    placeholder="Nombre del titular" required>
+
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" maxlength="60"
+                    placeholder="Marca del equipo" required>
+
+                <label for="estado">Estado</label>
+                <select id="estado" required>
+                    <option value="Operativo">Operativo</option>
+                    <option value="En reparación">En reparación</option>
+                    <option value="Descartado">Descartado</option>
+                </select>
+
+                <div class="form-buttons">
+
+                    <button type="submit" id="btn-guardar" class="btn btn-primary">
+                        Guardar equipo
+                    </button>
+
+                    <button type="button" id="btn-cancelar"
+                        class="btn btn-secondary hidden">
+                        Cancelar
+                    </button>
+
+                </div>
+
+                <p id="mensaje" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+        <section class="table-section">
+
+            <h2>Registro de equipos</h2>
+
+            <div class="contadores">
+
+                <article class="contador">
+                    <span>Total</span>
+                    <strong id="estadoLista">0</strong>
+                </article>
+
+                <article class="contador reparacion">
+                    <span>En reparación</span>
+                    <strong id="estadoLista_R">0</strong>
+                </article>
+
+                <article class="contador operativo">
+                    <span>Operativos</span>
+                    <strong id="contador_O">0</strong>
+                </article>
+
+                <article class="contador descartado">
+                    <span>Descartados</span>
+                    <strong id="contador_D">0</strong>
+                </article>
+
+            </div>
+
+            <div class="search-box">
+
+                <input type="search" id="input-buscar"
+                    placeholder="Buscar por titular o marca...">
+
+                <select id="filtro-estado">
+                    <option value="">Todos los estados</option>
+                    <option value="Operativo">Operativo</option>
+                    <option value="En reparación">En reparación</option>
+                    <option value="Descartado">Descartado</option>
+                </select>
+
+            </div>
+
+            <div class="tabla-responsive">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titular</th>
+                            <th>Marca</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaEquipos"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
