@@ -129,6 +129,15 @@ void loop() {
       abrirServo();
       beep(2, 100);
       Serial.println("OK D");
+    } else if (c == 'O') {                // ABRIR PUERTA manual
+      mostrar("PUERTA ABIERTA", "Pase");
+      iniciarMensaje();
+      abrirServo();
+      beep(1, 100);
+      Serial.println("OK O");
+    } else if (c == 'C') {                // CERRAR PUERTA manual
+      cerrarServo();
+      Serial.println("OK C");
     }
     // Cualquier otro byte (\r, \n, etc.) se ignora
   }

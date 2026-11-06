@@ -273,6 +273,11 @@ class GestorIntegralApp:
                                       height=2, width=26, relief=tk.FLAT, cursor="hand2")
         self.btn_linterna.pack(pady=15)
 
+        self.btn_puerta = tk.Button(panel, text="🚪 Abrir puerta", bg="#17a2b8", fg="white",
+                                    font=("Segoe UI", 10, "bold"), command=self.abrir_puerta,
+                                    height=2, width=26, relief=tk.FLAT, cursor="hand2")
+        self.btn_puerta.pack(pady=(0, 10))
+
         ttk.Label(panel, text="Último QR escaneado:", font=("Segoe UI", 9, "bold")).pack(anchor="w", pady=5)
         self.txt_qr = tk.Text(panel, height=6, width=30, font=("Consolas", 10), relief=tk.FLAT,
                               wrap="word")
@@ -483,6 +488,14 @@ class GestorIntegralApp:
             return
         self.linterna_encendida = nuevo
         self._actualizar_boton_linterna()
+
+    # ------------------------------- Puerta (servo del Arduino) -------------------------------
+    def abrir_puerta(self):
+        """Abre la puerta manualmente (comando 'O'); se cierra sola tras unos segundos."""
+        self.enviar_comando_arduino(b"O")
+        if not self.conectado_arduino:
+            messagebox.showerror("Error", f"No hay conexión con el Arduino en {PORT_ARDUINO}.",
+                                 parent=self.root)
 
     # ------------------------------- Hilo de Video Serial (ESP32-CAM) -------------------------------
     def lector_serial_esp_dedicado(self):
