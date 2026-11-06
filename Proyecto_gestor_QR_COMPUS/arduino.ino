@@ -1,6 +1,6 @@
 #include <Wire.h>
 #include <Servo.h>
-#include <LiquidCrystal_I2C.h>   // Librería: "LiquidCrystal I2C" de Frank de Brabander
+#include <LiquidCrystal_I2C.h>   // "LiquidCrystal I2C" de Frank de Brabander
 
 // ==========================
 // PINES
@@ -44,6 +44,11 @@ void mostrar(const char* linea1, const char* linea2) {
   snprintf(buf, sizeof(buf), "%-16s", linea2);
   lcd.setCursor(0, 1);
   lcd.print(buf);
+
+  Serial.print("[LCD] ");
+  Serial.print(linea1);
+  Serial.print(" | ");
+  Serial.println(linea2);
 }
 
 void pantallaReposo() {
@@ -86,8 +91,14 @@ void setup() {
   pinMode(PIN_BUZZER, OUTPUT);
   digitalWrite(PIN_LED, LOW);
 
+  Wire.begin();
+  delay(1000);          // Deja estabilizar la alimentación del LCD
   lcd.init();
+  delay(100);
+  lcd.init();           // Segunda inicialización: más fiable en algunos módulos
+  delay(100);
   lcd.backlight();
+  lcd.clear();
   mostrar("Iniciando...", "");
 
   cerradura.attach(PIN_SERVO);

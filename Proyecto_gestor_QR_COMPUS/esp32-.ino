@@ -19,8 +19,20 @@
 
 #define FLASH_GPIO_NUM     4  // LED flash de la ESP32-CAM
 
-// DEBE coincidir con BAUD_ESP en el Python. Si tu adaptador lo soporta, prueba 2000000.
-#define BAUD_RATE 921600
+// DEBE coincidir con BAUD_ESP en el Python. Si todo va bien, puedes probar 921600.
+#define BAUD_RATE 460800
+
+// CRC32 estándar (idéntico a zlib.crc32 de Python)
+uint32_t crc32_calc(const uint8_t *data, size_t len) {
+  uint32_t crc = 0xFFFFFFFF;
+  for (size_t i = 0; i < len; i++) {
+    crc ^= data[i];
+    for (int k = 0; k < 8; k++) {
+      crc = (crc & 1) ? (crc >> 1) ^ 0xEDB88320 : (crc >> 1);
+    }
+  }
+  return ~crc;
+}
 
 void setup() {
   Serial.begin(BAUD_RATE);
@@ -53,7 +65,7 @@ void setup() {
   if (psramFound()) {
     config.frame_size = FRAMESIZE_VGA;           // 640x480
     config.jpeg_quality = 12;                    // 10 = más nítido pero más pesado por serial
-    config.fb_count = 2;                         // con 2 buffers, GRAB_LATEST sí entrega el frame más nuevo
+    config.fb_count = 1;
     config.fb_location = CAMERA_FB_IN_PSRAM;
     config.grab_mode = CAMERA_GRAB_LATEST;
   } else {
@@ -90,17 +102,17 @@ void loop() {
     return;
   }
 
-  // Cabecera propia (AA 55 AA 55) + longitud uint32 little-endian.
-  // Ya no se confunde con el FF D8 interno del JPEG.
+  // MAGIC (AA 55 AA 55) + longitud uint32 LE + CRC32 uint32 LE + JPEG
   uint32_t len = fb->len;
-  uint8_t header[8] = {
+  uint32_t crc = crc32_calc(fb->buf, len);
+  uint8_t header[12] = {
     0xAA, 0x55, 0xAA, 0x55,
-    (uint8_t)(len & 0xFF),
-    (uint8_t)((len >> 8) & 0xFF),
-    (uint8_t)((len >> 16) & 0xFF),
-    (uint8_t)((len >> 24) & 0xFF)
+    (uint8_t)(len & 0xFF), (uint8_t)((len >> 8) & 0xFF),
+    (uint8_t)((len >> 16) & 0xFF), (uint8_t)((len >> 24) & 0xFF),
+    (uint8_t)(crc & 0xFF), (uint8_t)((crc >> 8) & 0xFF),
+    (uint8_t)((crc >> 16) & 0xFF), (uint8_t)((crc >> 24) & 0xFF)
   };
-  Serial.write(header, 8);
+  Serial.write(header, 12);
   Serial.write(fb->buf, len);
 
   esp_camera_fb_return(fb);

@@ -16,7 +16,7 @@ from PIL import Image, ImageTk
 from pyzbar.pyzbar import ZBarSymbol, decode
 
 # ----------------------------- Configuración -----------------------------
-PORT_ESP = "COM6"       # ESP32-CAM (video)
+PORT_ESP = "COM7"       # ESP32-CAM (video) - ajusta al puerto que muestre Windows
 PORT_ARDUINO = "COM8"   # Arduino (actuadores)
 BAUD_ESP = 460800       # DEBE coincidir con Serial.begin() del sketch de la ESP32
 BAUD_ARDUINO = 9600
